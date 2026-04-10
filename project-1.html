@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Obstacle-avoiding Robot — Shubham Dadhich</title>
+  <meta name="description" content="Embedded Systems project - Autonomous robot with Arduino UNO, ultrasonic sensors, and servo motor navigation."/>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div class="bg"></div>
+<div class="bg-grid"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap">
+    <div class="nav-inner glass-card">
+      <a href="index.html" class="nav-logo">SD</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="nav-hire">Hire me</a>
+      <div class="hamburger" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PROJECT DETAIL -->
+<section class="hero" style="padding: 80px 0 40px;">
+  <div class="wrap">
+    <a href="index.html#projects" style="display:inline-flex;align-items:center;gap:6px;color:var(--teal);text-decoration:none;margin-bottom:24px;font-size:13px;font-weight:500;">← Back to projects</a>
+    <div class="proj-ico" style="background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.22);width:64px;height:64px;margin-bottom:24px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+    </div>
+    <h1 class="hero-name" style="margin-bottom:16px;font-size:clamp(36px,5vw,56px);">Obstacle-avoiding Robot</h1>
+    <p class="hero-tagline" style="margin-bottom:24px;max-width:640px;">A fully functional autonomous robot prototype built as an Embedded Systems project. Utilizes HC-SR04 ultrasonic sensor for real-time obstacle detection and servo motor for dynamic navigation, powered by Li-ion batteries.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+      <span class="proj-tag" style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.25);color:var(--purple);">Arduino UNO</span>
+      <span class="proj-tag" style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.25);color:var(--purple);">C++</span>
+      <span class="proj-tag" style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.25);color:var(--purple);">HC-SR04 Sensor</span>
+      <span class="proj-tag" style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.25);color:var(--purple);">L298N Motor Driver</span>
+      <span class="proj-tag" style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.25);color:var(--purple);">Embedded Systems</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT DETAILS -->
+<section style="padding:60px 0;">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start;">
+      <div>
+        <div style="margin-bottom:40px;">
+          <h2 style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--t1);">Project Overview</h2>
+          <p style="color:var(--t2);line-height:1.8;font-size:15px;">This embedded systems project showcases a fully functional autonomous robot prototype. The robot integrates Arduino UNO microcontroller with an HC-SR04 ultrasonic sensor for real-time obstacle detection, L298N motor driver for precise motor control, and servo motor for dynamic directional steering. Powered by 18650 Li-ion batteries, the robot navigates autonomously while continuously scanning and responding to environmental obstacles without human intervention.</p>
+        </div>
+
+        <div style="margin-bottom:40px;">
+          <h2 style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--t1);">Key Features</h2>
+          <ul style="list-style:none;padding:0;">
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--purple);flex-shrink:0;">✓</span><span style="color:var(--t2);">Real-time obstacle detection with HC-SR04 ultrasonic sensor</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--purple);flex-shrink:0;">✓</span><span style="color:var(--t2);">Servo motor-controlled directional steering</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--purple);flex-shrink:0;">✓</span><span style="color:var(--t2);">Fully autonomous navigation without remote control</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--purple);flex-shrink:0;">✓</span><span style="color:var(--t2);">Optimized power consumption with Li-ion battery management</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--purple);flex-shrink:0;">✓</span><span style="color:var(--t2);">Stable motor control with L298N driver for tight turns</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--purple);flex-shrink:0;">✓</span><span style="color:var(--t2);">Efficient path-finding and collision avoidance algorithm</span></li>
+          </ul>
+        </div>
+
+        <div style="margin-bottom:40px;">
+          <h2 style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--t1);">Technical Stack</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.15);padding:16px;border-radius:12px;">
+              <div style="font-size:12px;color:var(--t3);margin-bottom:4px;">Microcontroller</div>
+              <div style="color:var(--t1);font-weight:500;">Arduino UNO</div>
+            </div>
+            <div style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.15);padding:16px;border-radius:12px;">
+              <div style="font-size:12px;color:var(--t3);margin-bottom:4px;">Programming</div>
+              <div style="color:var(--t1);font-weight:500;">C++ (Arduino IDE)</div>
+            </div>
+            <div style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.15);padding:16px;border-radius:12px;">
+              <div style="font-size:12px;color:var(--t3);margin-bottom:4px;">Sensors & Control</div>
+              <div style="color:var(--t1);font-weight:500;">HC-SR04, Servo Motor, L298N</div>
+            </div>
+            <div style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.15);padding:16px;border-radius:12px;">
+              <div style="font-size:12px;color:var(--t3);margin-bottom:4px;">Power Supply</div>
+              <div style="color:var(--t1);font-weight:500;">18650 Li-ion Batteries</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--t1);">Project Highlights</h2>
+          <p style="color:var(--t2);line-height:1.8;font-size:15px;">This embedded systems project demonstrates comprehensive knowledge of hardware integration, real-time sensor processing, and embedded control systems. Successfully overcame critical challenges including motor stability optimization during tight turns and power consumption efficiency with Li-ion batteries. The fully functional prototype showcases practical experience in interfacing multiple hardware components, algorithm optimization for resource-constrained environments, and the ability to translate theoretical concepts into working embedded systems.</p>
+        </div>
+      </div>
+
+      <div style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.15);border-radius:22px;padding:32px;text-align:center;height:fit-content;">
+        <img src="pictures/robot_pic.png" alt="Obstacle-avoiding Robot" style="width:100%;height:240px;object-fit:cover;border-radius:16px;margin-bottom:24px;border:1px solid rgba(167,139,250,.25);">
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px;">
+          <div style="font-size:12px;color:var(--t3);margin-bottom:8px;">Status</div>
+          <div style="color:var(--teal);font-weight:600;font-size:14px;">✓ Completed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Designed & built by <span>Shubham Dadhich</span> &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; All rights reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

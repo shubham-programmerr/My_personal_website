@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shubham Dadhich — Software Engineer</title>
+  <meta name="description" content="Portfolio of Shubham Dadhich, Software Engineer specializing in Flutter, Python, and creative problem-solving."/>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    #certificates { display: block !important; visibility: visible !important; }
+    .certs-grid { display: grid !important; }
+    .cert-card { opacity: 1 !important; display: block !important; visibility: visible !important; transform: translateY(0) !important; cursor: pointer; }
+    .cert-image { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 12px; }
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); }
+    .modal.active { display: flex; align-items: center; justify-content: center; }
+    .modal-content { max-width: 90%; max-height: 90%; }
+    .modal-content img { width: 100%; height: auto; border-radius: 16px; }
+    .close { position: absolute; top: 20px; right: 30px; color: white; font-size: 28px; font-weight: bold; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div class="bg"></div>
+<div class="bg-grid"></div>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-inner glass-card">
+      <a href="#" class="nav-logo">SD</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#participations">Events</a></li>
+        <li><a href="#certificates">Certs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-hire">Hire me</a>
+      <div class="hamburger" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-layout">
+      <div>
+        <div class="hero-eyebrow"><div class="dot"></div> Open to opportunities</div>
+        <h1 class="hero-name">Hi, I'm<br/><span class="grad">Shubham Dadhich</span></h1>
+        <p class="hero-tagline">A software engineer who loves coding, solving problems, and creating impactful digital experiences — one clean line of code at a time.</p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-p">View my work</a>
+          <a href="#contact" class="btn-s">Let's talk</a>
+        </div>
+      </div>
+      <div class="profile-card glass-card">
+        <div class="avatar-ring">
+          <div class="avatar-inner">
+            <img id="profile-img" src="" alt="Shubham Dadhich"/>
+            <span id="avatar-initials">SD</span>
+          </div>
+        </div>
+        <div class="profile-name">Shubham Dadhich</div>
+        <div class="profile-role">Software Engineer</div>
+        <div class="profile-location">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Mangalore, India
+        </div>
+        <div class="profile-socials">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dadhichshubham32@gmail.com" class="soc-btn" title="Email" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          </a>
+          <a href="https://github.com/shubham-programmerr" class="soc-btn" title="GitHub" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/shubham-dadhich-519401311/" class="soc-btn" title="LinkedIn" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-box glass-card reveal"><div class="stat-n">4+</div><div class="stat-l">Projects built</div></div>
+      <div class="stat-box glass-card reveal d1"><div class="stat-n">2</div><div class="stat-l">Hackathons</div></div>
+      <div class="stat-box glass-card reveal d2"><div class="stat-n">8+</div><div class="stat-l">Certificates</div></div>
+      <div class="stat-box glass-card reveal d3"><div class="stat-n">2+</div><div class="stat-l">Years learning</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-label">About me</div>
+    <h2 class="sec-title">The person behind <span>the code</span></h2>
+    <div class="about-grid">
+      <div class="about-card glass-card reveal">
+        <p class="about-text">I'm a <b>dedicated software engineer</b> with a passion for turning ideas into functional, elegant software. My journey began in 11th grade when I chose Computer Science. Starting with Python and consistent practice, I've grown into creating real-world projects with precision and creativity.</p>
+        <p class="about-text" style="margin-top:16px;">I'm passionate about writing clean, efficient code and solving complex problems. Beyond coding, I enjoy playing football, listening to music, playing chess, collecting vintage items, and traveling—these passions keep me balanced, motivated, and inspired in everything I do.</p>
+        <div class="about-hl-row">
+          <div class="about-hl"><div class="about-hl-v">Data Analytics</div><div class="about-hl-k">Primary interest</div></div>
+          <div class="about-hl"><div class="about-hl-v">Mangalore</div><div class="about-hl-k">Based in</div></div>
+          <div class="about-hl"><div class="about-hl-v">Open</div><div class="about-hl-k">To opportunities</div></div>
+          <div class="about-hl"><div class="about-hl-v">2021</div><div class="about-hl-k">Coding since</div></div>
+        </div>
+      </div>
+      <div class="glass-card reveal d1" style="padding:28px;border-radius:var(--r-lg);">
+        <div style="font-size:13px;font-weight:500;color:var(--t2);margin-bottom:16px;">Quick facts</div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:14px;"><span style="color:var(--purple);margin-top:1px;">→</span><span style="color:var(--t2);">Passionate about <b style="color:var(--t1);font-weight:500;">data analytics</b> and extracting insights from complex data</span></div>
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:14px;"><span style="color:var(--teal);margin-top:1px;">→</span><span style="color:var(--t2);">Skilled in <b style="color:var(--t1);font-weight:500;">problem-solving</b> with OOP, DSA, and algorithmic thinking</span></div>
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:14px;"><span style="color:var(--pink);margin-top:1px;">→</span><span style="color:var(--t2);">Active in <b style="color:var(--t1);font-weight:500;">hackathons & tech events</b> to collaborate and innovate</span></div>
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:14px;"><span style="color:var(--purple);margin-top:1px;">→</span><span style="color:var(--t2);">Exploring <b style="color:var(--t1);font-weight:500;">backend development, ML & data-driven solutions</b></span></div>
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:14px;"><span style="color:var(--teal);margin-top:1px;">→</span><span style="color:var(--t2);">Enjoy <b style="color:var(--t1);font-weight:500;">building projects</b> that solve real-world problems</span></div>
+        </div>
+        <div style="margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.07);">
+          <div style="font-size:13px;font-weight:500;color:var(--t2);margin-bottom:8px;">Currently working on</div>
+          <div style="font-size:14px;color:var(--teal);">ChatterAI — Real-time peer-to-peer chat with AI integration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-label">Expertise</div>
+    <h2 class="sec-title">Skills & <span>technologies</span></h2>
+    <div class="skills-groups">
+      <div class="skill-group glass-card reveal">
+        <div class="sg-icon" style="background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.22);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="sg-title">Programming Languages</div>
+        <div class="skill-pills"><span class="pill">Python</span><span class="pill">C++</span><span class="pill">C</span><span class="pill">JavaScript</span><span class="pill">SQL</span><span class="pill">R</span></div>
+      </div>
+      <div class="skill-group glass-card reveal d1">
+        <div class="sg-icon" style="background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.20);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5eead4" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <div class="sg-title">Frameworks & Libraries</div>
+        <div class="skill-pills"><span class="pill t">Flutter</span><span class="pill t">LangChain</span><span class="pill t">Streamlit</span><span class="pill t">TensorFlow</span><span class="pill t">Keras</span><span class="pill t">NumPy</span><span class="pill t">Pandas</span></div>
+      </div>
+      <div class="skill-group glass-card reveal d2">
+        <div class="sg-icon" style="background:rgba(244,114,182,.12);border:1px solid rgba(244,114,182,.20);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <div class="sg-title">Databases & Backend</div>
+        <div class="skill-pills"><span class="pill p">SQL</span><span class="pill p">Firebase</span></div>
+      </div>
+      <div class="skill-group glass-card reveal">
+        <div class="sg-icon" style="background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.22);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="sg-title">Web Technologies</div>
+        <div class="skill-pills"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">Streamlit</span><span class="pill">JavaScript</span></div>
+      </div>
+      <div class="skill-group glass-card reveal d1">
+        <div class="sg-icon" style="background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.20);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5eead4" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="sg-title">Developer Tools & Platforms</div>
+        <div class="skill-pills"><span class="pill t">Git</span><span class="pill t">GitHub</span><span class="pill t">Arduino</span><span class="pill t">VS Code</span></div>
+      </div>
+      <div class="skill-group glass-card reveal d2">
+        <div class="sg-icon" style="background:rgba(244,114,182,.12);border:1px solid rgba(244,114,182,.20);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <div class="sg-title">AI & Machine Learning</div>
+        <div class="skill-pills"><span class="pill p">Object Detection (YOLO)</span><span class="pill p">RAG Pipelines</span><span class="pill p">Neural Networks</span><span class="pill p">RPA (UiPath)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-label">Work</div>
+    <h2 class="sec-title">Featured <span>projects</span></h2>
+    <div class="projects-grid">
+      <div class="proj-card glass-card reveal">
+        <div class="proj-ico" style="background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.22);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <div class="proj-title">Obstacle-avoiding robot</div>
+        <div class="proj-desc">An autonomous robot built with Arduino and ultrasonic sensors that detects and navigates around obstacles in real time without human input.</div>
+        <div class="proj-tags"><span class="proj-tag">Arduino</span><span class="proj-tag">C++</span><span class="proj-tag">Hardware</span><span class="proj-tag">Sensors</span></div>
+        <a href="project-1.html" class="proj-link">View project →</a>
+      </div>
+      <div class="proj-card glass-card reveal d1">
+        <div class="proj-ico" style="background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.22);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5eead4" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <div class="proj-title">Jumbling using Flutter</div>
+        <div class="proj-desc">An interactive puzzle mobile app with smooth drag-and-drop animations, game state tracking, and a clean UI experience built in Flutter.</div>
+        <div class="proj-tags"><span class="proj-tag">Flutter</span><span class="proj-tag">Dart</span><span class="proj-tag">Animations</span><span class="proj-tag">Mobile</span></div>
+        <a href="project-2.html" class="proj-link">View project →</a>
+      </div>
+      <div class="proj-card glass-card reveal d2">
+        <div class="proj-ico" style="background:rgba(244,114,182,.12);border:1px solid rgba(244,114,182,.22);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div class="proj-title">ProCode float-chat</div>
+        <div class="proj-desc">A floating chat widget app enabling real-time communication powered by Firebase, with a clean floating UI and notification support.</div>
+        <div class="proj-tags"><span class="proj-tag">Flutter</span><span class="proj-tag">Firebase</span><span class="proj-tag">Real-time</span><span class="proj-tag">Chat</span></div>
+        <a href="project-3.html" class="proj-link">View project →</a>
+      </div>
+      <div class="proj-card glass-card reveal">
+        <div class="proj-ico" style="background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.22);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="proj-title">Digit Recognition Model</div>
+        <div class="proj-desc">Trained a high-accuracy neural network for handwritten digit classification using MNIST dataset. Implemented with Python, TensorFlow, and Keras to achieve robust performance on digit detection.</div>
+        <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">TensorFlow</span><span class="proj-tag">Keras</span><span class="proj-tag">Neural Networks</span><span class="proj-tag">Machine Learning</span></div>
+        <a href="project-4.html" class="proj-link">View project →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HACKATHONS & EVENTS -->
+<section id="participations">
+  <div class="wrap">
+    <div class="sec-label">Participations</div>
+    <h2 class="sec-title">Hackathons & <span>events</span></h2>
+    <div class="hack-grid">
+      <div class="reveal">
+        <div class="hack-section-title">Hackathons</div>
+        <div class="hack-list">
+          <div class="hack-item glass-card"><div class="hack-dot" style="background:var(--purple)"></div><div class="hack-info"><div class="hack-name">SAP HackFest'24</div><div class="hack-meta">Enterprise software development competition</div></div><span class="hack-badge" style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.22);color:var(--purple)">Participant</span></div>
+          <div class="hack-item glass-card"><div class="hack-dot" style="background:var(--teal)"></div><div class="hack-info"><div class="hack-name">Smart India Hackathon</div><div class="hack-meta">National-level government innovation challenge • Project: FloatChat (AI-powered chat application)</div></div><span class="hack-badge" style="background:rgba(94,234,212,.10);border:1px solid rgba(94,234,212,.22);color:var(--teal)">Participant</span></div>
+        </div>
+      </div>
+      <div class="reveal d1">
+        <div class="hack-section-title">Events & workshops</div>
+        <div class="hack-list">
+          <div class="hack-item glass-card" onclick="openCertModal('pictures/Participated in Forge Quest.jpg')" style="cursor: pointer;"><div class="hack-dot" style="background:var(--purple)"></div><div class="hack-info"><div class="hack-name">Participated in Forge Quest</div><div class="hack-meta">Organized by MITE's CSE Department & CSI • Qualified Round 1 using Prompt Engineering • Solved 'Key Retrieval' challenge • Applied logical reasoning & precise communication</div></div><span class="hack-badge" style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.22);color:var(--purple)">View Certificate</span></div>
+          <div class="hack-item glass-card" onclick="openCertModal('pictures/Participated in Hack & Seek.png')" style="cursor: pointer;"><div class="hack-dot" style="background:var(--teal)"></div><div class="hack-info"><div class="hack-name">Participated in Hack & Seek</div><div class="hack-meta">By Dept of CSE, CORE & CSI at MITE • Three rounds: Tech quiz, Coding challenge & Web hunt • Team cleared Rounds 1 & 2, reached finals • Gained experience in problem-solving & teamwork</div></div><span class="hack-badge" style="background:rgba(94,234,212,.10);border:1px solid rgba(94,234,212,.22);color:var(--teal)">View Certificate</span></div>
+          <div class="hack-item glass-card" onclick="openCertModal('pictures/Participated in Prompt Wars.jpg')" style="cursor: pointer;"><div class="hack-dot" style="background:var(--pink)"></div><div class="hack-info"><div class="hack-name">Participated in Prompt Wars</div><div class="hack-meta">AI prompt engineering competition by C.O.R.E, CSI & Crypton Club at MITE • Cleared Round 1 • Gained insights into AI & prompt crafting</div></div><span class="hack-badge" style="background:rgba(244,114,182,.10);border:1px solid rgba(244,114,182,.22);color:var(--pink)">View Certificate</span></div>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div class="hack-section-title">Workshops</div>
+        <div class="hack-list">
+          <div class="hack-item glass-card" onclick="openCertModal('pictures/Workshop 1.png')" style="cursor: pointer;"><div class="hack-dot" style="background:var(--purple)"></div><div class="hack-info"><div class="hack-name">Developing Data Driven Product Backends with Java</div><div class="hack-meta">Organized by Mangalore Institute of Technology • Hands-on workshop covering Java backend development with data-driven approaches</div></div><span class="hack-badge" style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.22);color:var(--purple)">View Certificate</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates" style="display: block !important; padding: 88px 0 !important; visibility: visible !important; width: 100% !important;">
+  <div class="wrap" style="display: block !important; width: 100% !important;">
+    <div class="sec-label" style="display: block !important;">Achievements</div>
+    <h2 class="sec-title" style="display: block !important;">Certifications & <span>learning</span></h2>
+    <div class="certs-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 18px !important; width: 100% !important;">
+      <div class="cert-card glass-card reveal in" style="padding: 22px !important; border-radius: 16px !important; opacity: 1 !important; transform: translateY(0) !important; display: block !important; visibility: visible !important; width: 100% !important;" onclick="openCertModal('pictures/C Programming Course.jpg')"><img src="pictures/C Programming Course.jpg" alt="C Programming Certificate" class="cert-image" style="cursor: pointer;"><div class="cert-icon" style="background:rgba(167,139,250,.15) !important;border:1px solid rgba(167,139,250,.22);width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="cert-name" style="font-family:'Clash Display',sans-serif;font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.3;">C Programming Course</div><div class="cert-org" style="font-size:12px;color:var(--t2);margin-bottom:8px;">Infosys SpringBoard</div><div class="cert-year" style="font-size:11px;color:var(--t3);">2023</div></div>
+      <div class="cert-card glass-card reveal d1 in" style="padding: 22px !important; border-radius: 16px !important; opacity: 1 !important; transform: translateY(0) !important; display: block !important; visibility: visible !important; width: 100% !important;" onclick="openCertModal('pictures/HTML and CSS Bootcamp.jpg')"><img src="pictures/HTML and CSS Bootcamp.jpg" alt="HTML and CSS Certificate" class="cert-image" style="cursor: pointer;"><div class="cert-icon" style="background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.22);width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5eead4" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><div class="cert-name" style="font-family:'Clash Display',sans-serif;font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.3;">HTML and CSS Bootcamp</div><div class="cert-org" style="font-size:12px;color:var(--t2);margin-bottom:8px;">Web Development Bootcamp</div><div class="cert-year" style="font-size:11px;color:var(--t3);">2023</div></div>
+      <div class="cert-card glass-card reveal d2 in" style="padding: 22px !important; border-radius: 16px !important; opacity: 1 !important; transform: translateY(0) !important; display: block !important; visibility: visible !important; width: 100% !important;" onclick="openCertModal('pictures/Introduction to Artifical Intelligence.jpg')"><img src="pictures/Introduction to Artifical Intelligence.jpg" alt="AI Certificate" class="cert-image" style="cursor: pointer;"><div class="cert-icon" style="background:rgba(244,114,182,.12);border:1px solid rgba(244,114,182,.22);width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="cert-name" style="font-family:'Clash Display',sans-serif;font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.3;">Introduction to Artificial Intelligence</div><div class="cert-org" style="font-size:12px;color:var(--t2);margin-bottom:8px;">Infosys SpringBoard</div><div class="cert-year" style="font-size:11px;color:var(--t3);">2024</div></div>
+      <div class="cert-card glass-card reveal in" style="padding: 22px !important; border-radius: 16px !important; opacity: 1 !important; transform: translateY(0) !important; display: block !important; visibility: visible !important; width: 100% !important;" onclick="openCertModal('pictures/Introduction to Data Science.jpg')"><img src="pictures/Introduction to Data Science.jpg" alt="Data Science Certificate" class="cert-image" style="cursor: pointer;"><div class="cert-icon" style="background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.22);width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg></div><div class="cert-name" style="font-family:'Clash Display',sans-serif;font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.3;">Introduction to Data Science</div><div class="cert-org" style="font-size:12px;color:var(--t2);margin-bottom:8px;">Infosys SpringBoard</div><div class="cert-year" style="font-size:11px;color:var(--t3);">2023</div></div>
+      <div class="cert-card glass-card reveal d1 in" style="padding: 22px !important; border-radius: 16px !important; opacity: 1 !important; transform: translateY(0) !important; display: block !important; visibility: visible !important; width: 100% !important;" onclick="openCertModal('pictures/Introduction to NLP.jpg')"><img src="pictures/Introduction to NLP.jpg" alt="NLP Certificate" class="cert-image" style="cursor: pointer;"><div class="cert-icon" style="background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.22);width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5eead4" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="cert-name" style="font-family:'Clash Display',sans-serif;font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.3;">Introduction to NLP</div><div class="cert-org" style="font-size:12px;color:var(--t2);margin-bottom:8px;">Infosys SpringBoard</div><div class="cert-year" style="font-size:11px;color:var(--t3);">2024</div></div>
+      <div class="cert-card glass-card reveal d2 in" style="padding: 22px !important; border-radius: 16px !important; opacity: 1 !important; transform: translateY(0) !important; display: block !important; visibility: visible !important; width: 100% !important;" onclick="openCertModal('pictures/Introduction to R Programming.jpg')"><img src="pictures/Introduction to R Programming.jpg" alt="R Programming Certificate" class="cert-image" style="cursor: pointer;"><div class="cert-icon" style="background:rgba(244,114,182,.12);border:1px solid rgba(244,114,182,.22);width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="cert-name" style="font-family:'Clash Display',sans-serif;font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.3;">Introduction to R Programming</div><div class="cert-org" style="font-size:12px;color:var(--t2);margin-bottom:8px;">Infosys SpringBoard</div><div class="cert-year" style="font-size:11px;color:var(--t3);">2023</div></div>
+      <div class="cert-card glass-card reveal in" style="padding: 22px !important; border-radius: 16px !important; opacity: 1 !important; transform: translateY(0) !important; display: block !important; visibility: visible !important; width: 100% !important;" onclick="openCertModal('pictures/JavaScript Bootcamp.jpg')"><img src="pictures/JavaScript Bootcamp.jpg" alt="JavaScript Certificate" class="cert-image" style="cursor: pointer;"><div class="cert-icon" style="background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.22);width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><div class="cert-name" style="font-family:'Clash Display',sans-serif;font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.3;">JavaScript Bootcamp</div><div class="cert-org" style="font-size:12px;color:var(--t2);margin-bottom:8px;">Web Development Bootcamp</div><div class="cert-year" style="font-size:11px;color:var(--t3);">2023</div></div>
+      <div class="cert-card glass-card reveal d1 in" style="padding: 22px !important; border-radius: 16px !important; opacity: 1 !important; transform: translateY(0) !important; display: block !important; visibility: visible !important; width: 100% !important;" onclick="openCertModal('pictures/RPA Developer Foundation.jpg')"><img src="pictures/RPA Developer Foundation.jpg" alt="RPA Certificate" class="cert-image" style="cursor: pointer;"><div class="cert-icon" style="background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.22);width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5eead4" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div class="cert-name" style="font-family:'Clash Display',sans-serif;font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.3;">RPA Developer Foundation</div><div class="cert-org" style="font-size:12px;color:var(--t2);margin-bottom:8px;">UiPath Academy</div><div class="cert-year" style="font-size:11px;color:var(--t3);">2024</div></div>
+      <div class="cert-card glass-card reveal d2 in" style="padding: 22px !important; border-radius: 16px !important; opacity: 1 !important; transform: translateY(0) !important; display: block !important; visibility: visible !important; width: 100% !important;" onclick="openCertModal('pictures/SQL Basic to Advance.jpg')"><img src="pictures/SQL Basic to Advance.jpg" alt="SQL Certificate" class="cert-image" style="cursor: pointer;"><div class="cert-icon" style="background:rgba(244,114,182,.12);border:1px solid rgba(244,114,182,.22);width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><div class="cert-name" style="font-family:'Clash Display',sans-serif;font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.3;">SQL Basic to Advance</div><div class="cert-org" style="font-size:12px;color:var(--t2);margin-bottom:8px;">Online Learning Platform</div><div class="cert-year" style="font-size:11px;color:var(--t3);">2024</div></div>
+      <div class="cert-card glass-card reveal in" style="padding: 22px !important; border-radius: 16px !important; opacity: 1 !important; transform: translateY(0) !important; display: block !important; visibility: visible !important; width: 100% !important;" onclick="openCertModal('pictures/Statistics for R Programming.jpg')"><img src="pictures/Statistics for R Programming.jpg" alt="Statistics Certificate" class="cert-image" style="cursor: pointer;"><div class="cert-icon" style="background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.22);width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.41 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><div class="cert-name" style="font-family:'Clash Display',sans-serif;font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.3;">Statistics for R Programming</div><div class="cert-org" style="font-size:12px;color:var(--t2);margin-bottom:8px;">Infosys SpringBoard</div><div class="cert-year" style="font-size:11px;color:var(--t3);">2023</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-shell glass-card reveal">
+      <div class="contact-header">
+        <div class="sec-label" style="text-align:center;">Contact</div>
+        <h2>Let's build something<br/><span style="background:linear-gradient(120deg,var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">together</span></h2>
+        <p>Open to collaborations, internships, and exciting projects. Drop me a message!</p>
+      </div>
+      <form class="contact-form" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="form-group"><label>Your name</label><input type="text" name="from_name" placeholder="John Doe" required/></div>
+          <div class="form-group"><label>Email address</label><input type="email" name="from_email" placeholder="john@email.com" required/></div>
+        </div>
+        <div class="form-group"><label>Subject</label><input type="text" name="subject" placeholder="Project collaboration / Job opportunity..."/></div>
+        <div class="form-group"><label>Message</label><textarea rows="5" name="message" placeholder="Tell me about your project or opportunity..." required></textarea></div>
+        <button type="submit" class="form-submit">Send message</button>
+        <div class="form-msg" id="form-msg">Message sent! I'll get back to you soon.</div>
+      </form>
+      <div class="contact-alt">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dadhichshubham32@gmail.com" class="contact-chip" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          dadhichshubham32@gmail.com
+        </a>
+        <a href="https://github.com/shubham-programmerr" class="contact-chip" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/shubham-dadhich-519401311/" class="contact-chip" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Designed & built by <span>Shubham Dadhich</span> &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; All rights reserved</p>
+</footer>
+
+<!-- CERTIFICATE MODAL -->
+<div id="certModal" class="modal" onclick="closeCertModal(event)">
+  <span class="close" onclick="closeCertModal()">&times;</span>
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <img id="modalImage" src="" alt="Certificate" style="max-width: 100%; max-height: 100vh;">
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+// Initialize EmailJS when page loads
+window.addEventListener('load', function() {
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init('WGEY_kD6Vki4qNu0l');
+    console.log('EmailJS initialized');
+  }
+});
+
+function submitForm(event) {
+  event.preventDefault();
+  
+  const form = event.target;
+  const formData = {
+    from_name: form.elements['from_name'].value,
+    from_email: form.elements['from_email'].value,
+    subject: form.elements['subject'].value,
+    message: form.elements['message'].value
+  };
+  
+  emailjs.send('service_vppnter', 'template_e96ayq8', formData)
+    .then(function(response) {
+      console.log('Email sent!', response);
+      const msgDiv = document.getElementById('form-msg');
+      msgDiv.style.display = 'block';
+      msgDiv.style.color = '#5eead4';
+      msgDiv.textContent = 'Message sent! I\'ll get back to you soon.';
+      form.reset();
+      
+      setTimeout(() => {
+        msgDiv.style.display = 'none';
+      }, 5000);
+    }, function(error) {
+      console.error('Email failed:', error);
+      const msgDiv = document.getElementById('form-msg');
+      msgDiv.style.display = 'block';
+      msgDiv.style.color = '#f472b6';
+      msgDiv.textContent = 'Failed to send message. Please try again or email directly.';
+      
+      setTimeout(() => {
+        msgDiv.style.display = 'none';
+      }, 5000);
+    });
+}
+
+function openCertModal(imgPath) {
+  document.getElementById('modalImage').src = imgPath;
+  document.getElementById('certModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeCertModal(event) {
+  if (event && event.target.id !== 'certModal') return;
+  const modal = document.getElementById('certModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeCertModal();
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+<script>
+// Initialize EmailJS
+emailjs.init('WGEY_kD6Vki4qNu0l');
+
+function submitForm(event) {
+  event.preventDefault();
+  
+  const form = event.target;
+  const formData = {
+    from_name: form.elements['from_name'].value,
+    from_email: form.elements['from_email'].value,
+    subject: form.elements['subject'].value,
+    message: form.elements['message'].value
+  };
+  
+  emailjs.send('service_vppnter', 'template_e96ayq8', formData)
+    .then(function(response) {
+      console.log('Email sent!', response);
+      const msgDiv = document.getElementById('form-msg');
+      msgDiv.style.display = 'block';
+      msgDiv.style.color = '#5eead4';
+      msgDiv.textContent = 'Message sent! I\'ll get back to you soon.';
+      form.reset();
+      
+      setTimeout(() => {
+        msgDiv.style.display = 'none';
+      }, 5000);
+    }, function(error) {
+      console.error('Email failed:', error);
+      const msgDiv = document.getElementById('form-msg');
+      msgDiv.style.display = 'block';
+      msgDiv.style.color = '#f472b6';
+      msgDiv.textContent = 'Failed to send message. Please try again or email directly.';
+      
+      setTimeout(() => {
+        msgDiv.style.display = 'none';
+      }, 5000);
+    });
+}
+</script>
+</body>
+</html>

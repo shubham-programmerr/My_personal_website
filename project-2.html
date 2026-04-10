@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jumble Word Game — Shubham Dadhich</title>
+  <meta name="description" content="Interactive Jumble Word Puzzle Game built with Flutter, featuring timer-based challenges and performance tracking."/>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div class="bg"></div>
+<div class="bg-grid"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap">
+    <div class="nav-inner glass-card">
+      <a href="index.html" class="nav-logo">SD</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="nav-hire">Hire me</a>
+      <div class="hamburger" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PROJECT DETAIL -->
+<section class="hero" style="padding: 80px 0 40px;">
+  <div class="wrap">
+    <a href="index.html#projects" style="display:inline-flex;align-items:center;gap:6px;color:var(--teal);text-decoration:none;margin-bottom:24px;font-size:13px;font-weight:500;">← Back to projects</a>
+    <div class="proj-ico" style="background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.22);width:64px;height:64px;margin-bottom:24px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5eead4" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+    </div>
+    <h1 class="hero-name" style="margin-bottom:16px;font-size:clamp(36px,5vw,56px);">Jumble Word Game</h1>
+    <p class="hero-tagline" style="margin-bottom:24px;max-width:640px;">An engaging word puzzle game where players unscramble jumbled words within timer-based challenges. Features customizable difficulty levels, performance dashboard, and audio support for an immersive gaming experience.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+      <span class="proj-tag" style="background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.25);color:var(--teal);">Flutter</span>
+      <span class="proj-tag" style="background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.25);color:var(--teal);">Dart</span>
+      <span class="proj-tag" style="background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.25);color:var(--teal);">SharedPreferences</span>
+      <span class="proj-tag" style="background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.25);color:var(--teal);">Game Dev</span>
+      <span class="proj-tag" style="background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.25);color:var(--teal);">Audio</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT DETAILS -->
+<section style="padding:60px 0;">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start;">
+      <div>
+        <div style="margin-bottom:40px;">
+          <h2 style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--t1);">Project Overview</h2>
+          <p style="color:var(--t2);line-height:1.8;font-size:15px;">Jumble Word Game is an engaging puzzle game developed with Flutter that challenges players to unscramble jumbled words within time limits. The game combines entertaining gameplay mechanics with a polished user interface, offering configurable difficulty levels (Easy, Medium, Hard) and comprehensive performance tracking. It showcases efficient local data management using SharedPreferences and demonstrates how to create engaging, polished mobile gaming experiences.</p>
+        </div>
+
+        <div style="margin-bottom:40px;">
+          <h2 style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--t1);">Key Features</h2>
+          <ul style="list-style:none;padding:0;">
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--teal);flex-shrink:0;">✓</span><span style="color:var(--t2);">Timer-based gameplay with word unscrambling challenges</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--teal);flex-shrink:0;">✓</span><span style="color:var(--t2);">Customizable player name, difficulty levels, and word count</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--teal);flex-shrink:0;">✓</span><span style="color:var(--t2);">Performance dashboard with stats (total words, solving time, XP, daily streak)</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--teal);flex-shrink:0;">✓</span><span style="color:var(--t2);">Background music and sound toggle functionality</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--teal);flex-shrink:0;">✓</span><span style="color:var(--t2);">Modern UI with smooth animations and responsive design</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--teal);flex-shrink:0;">✓</span><span style="color:var(--t2);">Session statistics and daily tracking</span></li>
+          </ul>
+        </div>
+
+        <div style="margin-bottom:40px;">
+          <h2 style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--t1);">Technical Stack</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div style="background:rgba(94,234,212,.08);border:1px solid rgba(94,234,212,.15);padding:16px;border-radius:12px;">
+              <div style="font-size:12px;color:var(--t3);margin-bottom:4px;">Frontend</div>
+              <div style="color:var(--t1);font-weight:500;">Flutter (Dart)</div>
+            </div>
+            <div style="background:rgba(94,234,212,.08);border:1px solid rgba(94,234,212,.15);padding:16px;border-radius:12px;">
+              <div style="font-size:12px;color:var(--t3);margin-bottom:4px;">State Management</div>
+              <div style="color:var(--t1);font-weight:500;">Stateful Widgets</div>
+            </div>
+            <div style="background:rgba(94,234,212,.08);border:1px solid rgba(94,234,212,.15);padding:16px;border-radius:12px;">
+              <div style="font-size:12px;color:var(--t3);margin-bottom:4px;">Local Storage</div>
+              <div style="color:var(--t1);font-weight:500;">SharedPreferences</div>
+            </div>
+            <div style="background:rgba(94,234,212,.08);border:1px solid rgba(94,234,212,.15);padding:16px;border-radius:12px;">
+              <div style="font-size:12px;color:var(--t3);margin-bottom:4px;">Build Tools</div>
+              <div style="color:var(--t1);font-weight:500;">Gradle (Kotlin DSL)</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--t1);">Project Highlights</h2>
+          <p style="color:var(--t2);line-height:1.8;font-size:15px;">This project demonstrates comprehensive Flutter expertise including game logic design, state management with Stateful Widgets, and efficient local data persistence. The polished UI with smooth animations showcases attention to user experience, while configurable difficulty levels and comprehensive performance tracking demonstrate scalable architecture. The integration of audio management and daily streak tracking highlights the ability to create engaging, user-focused applications with clean, maintainable code structure.</p>
+        </div>
+      </div>
+
+      <div style="background:rgba(94,234,212,.08);border:1px solid rgba(94,234,212,.15);border-radius:22px;padding:32px;text-align:center;height:fit-content;">
+        <img src="pictures/logo.png" alt="Jumbling using Flutter" style="width:100%;height:240px;object-fit:cover;border-radius:16px;margin-bottom:24px;border:1px solid rgba(94,234,212,.25);">
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px;">
+          <div style="font-size:12px;color:var(--t3);margin-bottom:8px;">Status</div>
+          <div style="color:var(--teal);font-weight:600;font-size:14px;">✓ Completed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Designed & built by <span>Shubham Dadhich</span> &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; All rights reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

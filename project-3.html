@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProCode FloatChat — Shubham Dadhich</title>
+  <meta name="description" content="AI-powered chat interface for oceanographic data analysis, Smart India Hackathon project."/>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div class="bg"></div>
+<div class="bg-grid"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap">
+    <div class="nav-inner glass-card">
+      <a href="index.html" class="nav-logo">SD</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="nav-hire">Hire me</a>
+      <div class="hamburger" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PROJECT DETAIL -->
+<section class="hero" style="padding: 80px 0 40px;">
+  <div class="wrap">
+    <a href="index.html#projects" style="display:inline-flex;align-items:center;gap:6px;color:var(--teal);text-decoration:none;margin-bottom:24px;font-size:13px;font-weight:500;">← Back to projects</a>
+    <div class="proj-ico" style="background:rgba(244,114,182,.12);border:1px solid rgba(244,114,182,.22);width:64px;height:64px;margin-bottom:24px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    </div>
+    <h1 class="hero-name" style="margin-bottom:16px;font-size:clamp(36px,5vw,56px);">ProCode FloatChat</h1>
+    <p class="hero-tagline" style="margin-bottom:24px;max-width:640px;">AI-powered chat interface for analyzing oceanographic data. Developed for Smart India Hackathon, FloatChat makes complex scientific datasets accessible through natural language queries.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+      <span class="proj-tag" style="background:rgba(244,114,182,.12);border:1px solid rgba(244,114,182,.25);color:var(--pink);">Python</span>
+      <span class="proj-tag" style="background:rgba(244,114,182,.12);border:1px solid rgba(244,114,182,.25);color:var(--pink);">LangChain</span>
+      <span class="proj-tag" style="background:rgba(244,114,182,.12);border:1px solid rgba(244,114,182,.25);color:var(--pink);">Streamlit</span>
+      <span class="proj-tag" style="background:rgba(244,114,182,.12);border:1px solid rgba(244,114,182,.25);color:var(--pink);">PostgreSQL</span>
+      <span class="proj-tag" style="background:rgba(244,114,182,.12);border:1px solid rgba(244,114,182,.25);color:var(--pink);">RAG</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT DETAILS -->
+<section style="padding:60px 0;">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start;">
+      <div>
+        <div style="margin-bottom:40px;">
+          <h2 style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--t1);">Project Overview</h2>
+          <p style="color:var(--t2);line-height:1.8;font-size:15px;">FloatChat is an AI-powered application that makes oceanographic data analysis intuitive and accessible. Built during Smart India Hackathon, it combines the ARGO dataset (global ocean measurements) with advanced natural language processing. Instead of writing SQL queries, users ask questions in plain English, and the system intelligently generates appropriate database queries, visualizations, and insights for marine research.</p>
+        </div>
+
+        <div style="margin-bottom:40px;">
+          <h2 style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--t1);">Key Features</h2>
+          <ul style="list-style:none;padding:0;">
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--pink);flex-shrink:0;">✓</span><span style="color:var(--t2);">Natural language query interface for oceanographic data</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--pink);flex-shrink:0;">✓</span><span style="color:var(--t2);">RAG pipeline for accurate data retrieval and analysis</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--pink);flex-shrink:0;">✓</span><span style="color:var(--t2);">Dynamic SQL generation from conversational queries</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--pink);flex-shrink:0;">✓</span><span style="color:var(--t2);">Interactive data visualizations (Plotly, Pydeck)</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--pink);flex-shrink:0;">✓</span><span style="color:var(--t2);">Automated ARGO data ingestion pipeline</span></li>
+            <li style="display:flex;gap:12px;margin-bottom:12px;"><span style="color:var(--pink);flex-shrink:0;">✓</span><span style="color:var(--t2);">Data export functionality (CSV, insights)</span></li>
+          </ul>
+        </div>
+
+        <div style="margin-bottom:40px;">
+          <h2 style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--t1);">Technical Stack</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div style="background:rgba(244,114,182,.08);border:1px solid rgba(244,114,182,.15);padding:16px;border-radius:12px;">
+              <div style="font-size:12px;color:var(--t3);margin-bottom:4px;">Backend & Data</div>
+              <div style="color:var(--t1);font-weight:500;">Python, PostgreSQL, PostGIS</div>
+            </div>
+            <div style="background:rgba(244,114,182,.08);border:1px solid rgba(244,114,182,.15);padding:16px;border-radius:12px;">
+              <div style="font-size:12px;color:var(--t3);margin-bottom:4px;">AI & ML</div>
+              <div style="color:var(--t1);font-weight:500;">LangChain, Groq (Llama 3.1), FAISS</div>
+            </div>
+            <div style="background:rgba(244,114,182,.08);border:1px solid rgba(244,114,182,.15);padding:16px;border-radius:12px;">
+              <div style="font-size:12px;color:var(--t3);margin-bottom:4px;">Frontend</div>
+              <div style="color:var(--t1);font-weight:500;">Streamlit, Plotly, Pydeck</div>
+            </div>
+            <div style="background:rgba(244,114,182,.08);border:1px solid rgba(244,114,182,.15);padding:16px;border-radius:12px;">
+              <div style="font-size:12px;color:var(--t3);margin-bottom:4px;">Deployment</div>
+              <div style="color:var(--t1);font-weight:500;">Streamlit Cloud, GitHub</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 style="font-family:'Clash Display',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--t1);">Project Highlights</h2>
+          <p style="color:var(--t2);line-height:1.8;font-size:15px;margin-bottom:20px;">FloatChat demonstrates advanced proficiency in full-stack AI development, combining advanced RAG techniques with practical oceanographic research applications. The project integrates spatial database queries (PostGIS), real-time LLM inference (Groq), vector similarity search (FAISS), and interactive data visualization. It showcases expertise in turning complex scientific challenges into intuitive, user-friendly solutions for Smart India Hackathon.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="https://procodefloatchat.streamlit.app" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:12px 20px;background:rgba(244,114,182,.15);border:1px solid rgba(244,114,182,.3);color:var(--pink);text-decoration:none;border-radius:8px;font-weight:500;font-size:14px;transition:all 0.3s;">Live Demo ↗</a>
+            <a href="https://github.com/shubham-programmerr/floatchat" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:12px 20px;background:rgba(244,114,182,.15);border:1px solid rgba(244,114,182,.3);color:var(--pink);text-decoration:none;border-radius:8px;font-weight:500;font-size:14px;transition:all 0.3s;">GitHub Repo ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:rgba(244,114,182,.08);border:1px solid rgba(244,114,182,.15);border-radius:22px;padding:32px;text-align:center;height:fit-content;">
+        <img src="pictures/floatchat.png" alt="ProCode float-chat" style="width:100%;height:240px;object-fit:cover;border-radius:16px;margin-bottom:24px;border:1px solid rgba(244,114,182,.25);">
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px;">
+          <div style="font-size:12px;color:var(--t3);margin-bottom:8px;">Status</div>
+          <div style="color:var(--pink);font-weight:600;font-size:14px;">✓ Completed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Designed & built by <span>Shubham Dadhich</span> &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; All rights reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
