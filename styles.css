@@ -1004,4 +1004,17 @@ footer span {
     grid-template-columns: 1fr !important;
     gap: 24px !important;
   }
+  
+  /* Show native cursor on mobile */
+  body {
+    cursor: auto !important;
+  }
+  
+  #cursor {
+    display: none !important;
+  }
+  
+  #cursor-ring {
+    display: none !important;
+  }
 }
