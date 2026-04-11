@@ -291,8 +291,8 @@ nav {
 }
 
 .profile-card {
-  width: 210px;
-  padding: 28px 22px;
+  width: 260px;
+  padding: 36px 28px;
   border-radius: var(--r-lg);
   text-align: center;
   animation: fadeUp 0.7s 0.32s ease both;
@@ -300,10 +300,10 @@ nav {
 }
 
 .avatar-ring {
-  width: 90px;
-  height: 90px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
-  margin: 0 auto 14px;
+  margin: 0 auto 18px;
   background: linear-gradient(135deg, var(--purple), var(--pink), var(--teal));
   padding: 2px;
 }
@@ -321,6 +321,7 @@ nav {
   font-weight: 700;
   color: var(--purple);
   overflow: hidden;
+  position: relative;
 }
 
 .avatar-inner img {
@@ -328,7 +329,10 @@ nav {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  display: none;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .profile-name {
