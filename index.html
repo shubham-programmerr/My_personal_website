@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://shubhamd.me/" />
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.umd.min.js"></script>
+
   <script>
     // Wait a bit for library to load
     setTimeout(function() {
@@ -300,16 +300,7 @@
         <h2>Let's build something<br/><span style="background:linear-gradient(120deg,var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">together</span></h2>
         <p>Open to collaborations, internships, and exciting projects. Drop me a message!</p>
       </div>
-      <form class="contact-form" id="contactForm" onsubmit="return false;" style="display:none;">
-        <div class="form-row">
-          <div class="form-group"><label>Your name</label><input type="text" name="from_name" placeholder="John Doe" required/></div>
-          <div class="form-group"><label>Email address</label><input type="email" name="from_email" placeholder="john@email.com" required/></div>
-        </div>
-        <div class="form-group"><label>Subject</label><input type="text" name="subject" placeholder="Project collaboration / Job opportunity..."/></div>
-        <div class="form-group"><label>Message</label><textarea rows="5" name="message" placeholder="Tell me about your project or opportunity..." required></textarea></div>
-        <button type="submit" class="form-submit">Send message</button>
-        <div class="form-msg" id="form-msg" style="display:none;">Message sent! I'll get back to you soon.</div>
-      </form>
+
       <div style="text-align:center; padding: 20px; background:rgba(94,234,212,.05); border-radius:12px; border:1px solid rgba(94,234,212,.2);">
         <p style="margin-bottom: 16px; color:var(--t2);">Let's connect! Choose your preferred way to reach out:</p>
       <div class="contact-alt">
@@ -344,49 +335,6 @@
 
 <script src="script.js"></script>
 <script>
-// Initialize EmailJS when page loads
-window.addEventListener('load', function() {
-  if (typeof emailjs !== 'undefined') {
-    emailjs.init('WGEY_kD6Vki4qNu0l');
-    console.log('EmailJS initialized');
-  }
-});
-
-function submitForm(event) {
-  event.preventDefault();
-  
-  const form = event.target;
-  const formData = {
-    from_name: form.elements['from_name'].value,
-    from_email: form.elements['from_email'].value,
-    subject: form.elements['subject'].value,
-    message: form.elements['message'].value
-  };
-  
-  emailjs.send('service_vppnter', 'template_e96ayq8', formData)
-    .then(function(response) {
-      console.log('Email sent!', response);
-      const msgDiv = document.getElementById('form-msg');
-      msgDiv.style.display = 'block';
-      msgDiv.style.color = '#5eead4';
-      msgDiv.textContent = 'Message sent! I\'ll get back to you soon.';
-      form.reset();
-      
-      setTimeout(() => {
-        msgDiv.style.display = 'none';
-      }, 5000);
-    }, function(error) {
-      console.error('Email failed:', error);
-      const msgDiv = document.getElementById('form-msg');
-      msgDiv.style.display = 'block';
-      msgDiv.style.color = '#f472b6';
-      msgDiv.textContent = 'Failed to send message. Please try again or email directly.';
-      
-      setTimeout(() => {
-        msgDiv.style.display = 'none';
-      }, 5000);
-    });
-}
 
 function openCertModal(imgPath) {
   document.getElementById('modalImage').src = imgPath;
@@ -406,53 +354,6 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
 
-<script>
-function submitForm(event) {
-  event.preventDefault();
-  
-  if (typeof emailjs === 'undefined') {
-    alert('Email service failed to load. Please check your internet connection.');
-    return;
-  }
-  
-  const form = event.target;
-  const submitBtn = form.querySelector('.form-submit');
-  const msgDiv = document.getElementById('form-msg');
-  
-  // Show loading state
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Sending...';
-  
-  console.log('Sending form with sendForm method');
-  
-  // Use sendForm method - simpler and more reliable
-  emailjs.sendForm('service_vppnter', 'template_e96ayq8', form)
-    .then(function(response) {
-      console.log('Email sent successfully!', response);
-      msgDiv.style.display = 'block';
-      msgDiv.style.color = '#5eead4';
-      msgDiv.textContent = 'Message sent! I\'ll get back to you soon.';
-      form.reset();
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send message';
-      
-      setTimeout(() => {
-        msgDiv.style.display = 'none';
-      }, 5000);
-    })
-    .catch(function(error) {
-      console.error('Email sending failed:', error);
-      msgDiv.style.display = 'block';
-      msgDiv.style.color = '#f472b6';
-      msgDiv.textContent = 'Failed to send message. Please try again or email directly.';
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send message';
-      
-      setTimeout(() => {
-        msgDiv.style.display = 'none';
-      }, 5000);
-    });
-}
-</script>
+
 </body>
 </html>
