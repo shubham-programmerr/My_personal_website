@@ -1000,4 +1000,8 @@ footer span {
   .hero {
     padding: 72px 0 60px;
   }
+  .proj-layout {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
 }
